@@ -1,0 +1,41 @@
+<!-- Подключаемся к шаблону -->
+{% extends 'base.html' %}
+
+<!-- Название страницы -->
+{% block page_title %} Регистрация {% endblock %}
+
+<!-- Подключение модулей в секции head -->
+{% block page_head %}
+<link rel="stylesheet" href="{{ url_for('auth.register.static', filename='register_page/style.css') }}">
+{% endblock %}
+
+<!-- Заголовок страницы (header) -->
+{% block page_header %} Регистрация нового пользователя {% endblock %}
+
+<!-- Основная часть (main) -->
+{% block page_main %}
+
+{% for msg in get_flashed_messages() %}
+<div>{{ msg }}</div>
+{% endfor %}
+
+<form method="POST" action="{{ url_for('auth.register.register') }}">
+    {{ form.login.label() }}: {{ form.login() }}
+    {{ form.email.label() }}: {{ form.email() }}
+    {{ form.password.label() }}: {{ form.password() }}
+    {% for err in form.password.errors %}
+    <div>{{ err }}</div>
+    {% endfor %}
+    {{ form.password_confirm.label() }}: {{ form.password_confirm() }}
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+{% endblock %}
+
+<!-- Окончание страницы (footer) -->
+{% block page_footer %} {% endblock %}
+
+<!-- Дополнительный код в секции body -->
+{% block page_body %}
+<script src="{{ url_for('auth.register.static', filename='register_page_static/js/script.js') }}"></script>
+{% endblock %}

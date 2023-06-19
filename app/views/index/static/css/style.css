@@ -1,0 +1,277 @@
+.section_header {
+    font-weight: 500px;
+    font-size: 36px;
+    text-align: center;
+    padding: 60px 0;
+    text-transform: uppercase;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+}
+
+.header__content {
+    display: flex;
+    height: 110px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header__logo {
+    font-weight: 500;
+    opacity: .2;
+    text-transform: uppercase;
+}
+
+
+.header__navigation {
+    text-transform: uppercase;
+}
+
+.header__navigation-menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.header__navigation-menu-item {
+    margin-right: 46px;
+}
+
+.header__navigation-menu-item:last-child {
+    margin-right: 0px;
+}
+
+.header__navigation-menu-item-link {
+    text-decoration: none;
+    color: black;
+}
+
+/* Section take your time */
+#take_your_time_section {
+      background-image: url("../imgs/take_your_time_section_img.png");
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat no-repeat;
+      height: 622px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding-top: 267px;
+    text-transform: uppercase;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 10px;
+    width: 80px;
+    background-color:#817070;
+}
+
+/* Section story */
+h2 {
+}
+
+.story_section__content {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.story_section__content-image {
+    width: 600px;
+    height: 400px;
+}
+
+.story_section__content-text {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 40px;
+    font-weight: 300px;
+    font-size: 20px;
+}
+
+/* Section blog */
+#blog_section {
+    background-color: #efefef;
+}
+
+.blog_section__content {
+    display: flex;
+    justify-content: center;
+}
+
+.blog_section__content-card {
+    display: inline-flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    margin-left: 70px;
+    margin-bottom: 65px;
+}
+.blog_section__content-card:first-child {
+    margin-left: 0px;
+}
+
+.blog_section__content-card-title {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.blog_section__content-card-img {
+    width: 325px;
+    height: 216px;
+    margin-bottom: 24px;
+}
+
+.blog_section__content-card-subtitle {
+    display: inline-block;
+    width: 325px;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+
+/* Section news */
+
+#news_section {
+    background-color: white;
+}
+
+.news_section__title {
+    font-weight: 500;
+    font-size: 36px;
+    color: black;
+    text-transform: uppercase;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.news_section-form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.news_section__form {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.news_section__form-input {
+    background: transparent;
+    border: 3px solid white;
+    padding: 16px 93px;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 28px;
+}
+::placeholder {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.news_section__form-button {
+    color: #817070;
+    background-color: white;
+    padding: 13px 34px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 58px;
+}
+
+/* Section subscribe */
+#subscribe_section {
+    background-color: #817070;
+}
+
+.subscribe_section__title {
+    font-weight: 500;
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.subscribe_section-form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe_section__form {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.subscribe_section__form-input {
+    background: transparent;
+    border: 3px solid white;
+    padding: 16px 93px;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 28px;
+}
+::placeholder {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.subscribe_section__form-button {
+    color: #817070;
+    background-color: white;
+    padding: 13px 34px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 58px;
+}
+
+/* Section footer */
+
+.footer__title {
+    padding: 28px 0 14px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+

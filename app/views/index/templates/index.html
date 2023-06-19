@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+
+        <div class="header__content">
+
+            <div class="header__logo">
+                Coffee House
+            </div>
+
+            <nav class="header__navigation">
+                <ul class="header__navigation-menu">
+                    <li class="header__navigation-menu-item">
+                        <a href="#take_your_time_section" class="header__navigation-menu-item-link">Home</a></li>
+                    <li class="header__navigation-menu-item">
+                        <a href="#story_section" class="header__navigation-menu-item-link">Story</a></li>
+                    <li class="header__navigation-menu-item">
+                        <a href="#blog_section" class="header__navigation-menu-item-link">Blog</a></li>
+                    <li class="header__navigation-menu-item">
+                        <a href="#subscribe_section" class="header__navigation-menu-item-link">Subscribe</a></li>
+                    {% if g.login %}
+                     <li class="header__navigation-menu-item">
+                        <a href="{{ url_for('auth.logout.logout') }}" class="header__navigation-menu-item-link">Log out</a></li>
+                    {% else %}
+                    <li class="header__navigation-menu-item">
+                        <a href="{{ url_for('auth.login.login') }}" class="header__navigation-menu-item-link">Sign In</a></li>
+                    <li class="header__navigation-menu-item">
+                        <a href="{{ url_for('auth.register.register') }}" class="header__navigation-menu-item-link">Sign Up</a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+<section id="take_your_time_section">
+    <div class="container">
+        <h1>Take your time</h1>
+    </div>
+</section>
+<section id="story_section">
+    <div class="container">
+
+        <h2 class="section_header">Story</h2>
+        <div class="story_section__content">
+            <img src="{{ url_for('index.static', filename='imgs/story_section_img.png') }}"
+                 class="story_section__content-image">
+            <p class="story_section__content-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius eget arcu quis cursus. Nunc id
+                tortor imperdiet, vestibulum orci sed, gravida orci. Cras a enim ac elit eleifend euismod. Class aptent
+                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent mattis ultrices
+                est, congue ullamcorper erat bibendum pulvinar. In accumsan dapibus accumsan. Maecenas semper est ut
+                nunc feugiat, vel ultrices ligula commodo. Donec eget pulvinar nunc, eget pharetra risus.
+            </p>
+        </div>
+    </div>
+
+</section>
+<section id="blog_section">
+    <div class="container">
+        <h3 class="section_header">Blog</h3>
+        <div class="blog_section__content">
+            <div class="blog_section__content-card">
+                <p class="blog_section__content-card-title">Daily Coffee News</p>
+                <img class="blog_section__content-card-img"
+                     src="{{ url_for('index.static', filename='imgs/blog1_section_img.png') }}">
+                <p class="blog_section__content-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius eget arcu quis cursus. Nunc
+                    id tortor imperdiet, vestibulum orci sed, gravida orci. Cras a enim ac elit eleifend euismod.
+                </p>
+            </div>
+            <div class="blog_section__content-card">
+                <p class="blog_section__content-card-title">Dutch Coffee Chains</p>
+                <img class="blog_section__content-card-img"
+                     src="{{ url_for('index.static', filename='imgs/blog2_section_img.png') }}">
+                <p class="blog_section__content-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius eget arcu quis cursus. Nunc
+                    id tortor imperdiet, vestibulum orci sed, gravida orci. Cras a enim ac elit eleifend euismod.
+                </p>
+            </div>
+            <div class="blog_section__content-card">
+                <p class="blog_section__content-card-title">Start Up in Menneapolis</p>
+                <img class="blog_section__content-card-img"
+                     src="{{ url_for('index.static', filename='imgs/blog3_section_img.png') }}">
+                <p class="blog_section__content-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius eget arcu quis cursus. Nunc
+                    id tortor imperdiet, vestibulum orci sed, gravida orci. Cras a enim ac elit eleifend euismod.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="news_section">
+    <div class="container">
+        <div class="news_section__content">
+            <h3 class="news_section__title">News</h3>
+            <ul id="news-list"></ul>
+            <form id="add-news-form">
+                <input type="text" id="news-name" placeholder="Заголовок">
+                <span class="news_section-form-wrapper">
+                    <form class="news_section__form">
+                        <textarea id="news-text" placeholder="Текст новости"></textarea>
+                        <button type="submit" id = "news_section__form-button">Добавить новость</button>
+                    </form>
+                </span>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section id="subscribe_section">
+    <div class="container">
+        <div class="subscribe_section__content">
+            <p class="subscribe_section__title">Subscribe</p>
+            <span class="subscribe_section-form-wrapper">
+            <form class="subscribe_section__form">
+                <input class="subscribe_section__form-input" type="email" placeholder="enter your email">
+                <button class="subscribe_section__form-button" type="submit">Submit</button>
+            </form>
+            </span>
+        </div>
+    </div>
+</section>
+<footer>
+    <p class="footer__title">&copy; Copyright 2021</p>
+</footer>
+<script src="{{ url_for('index.static', filename='js/script.js') }}"></script>
+</body>
+</html>
